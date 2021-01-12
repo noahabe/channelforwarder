@@ -3,8 +3,8 @@ from typing import TypedDict, List, Literal, cast
 from telegram import Update, InputMediaVideo, InputMediaPhoto, InputMediaDocument, InputMediaAudio
 from telegram.ext import Updater, MessageHandler, Filters, CallbackContext, Defaults, PicklePersistence
 from telegram.utils.helpers import effective_message_type
-GROUP_ID = -100
-CHANNEL_ID = -100
+GROUP_ID = -1001240979893 
+CHANNEL_ID = -1001424005920 
 MEDIA_GROUP_TYPES = {"audio": InputMediaAudio, "document": InputMediaDocument, "photo": InputMediaPhoto,
                      "video": InputMediaVideo}
 
@@ -78,7 +78,7 @@ def del_msg(update: Update, context: CallbackContext):
 def main():
     pers = PicklePersistence("persistence")
     defaults = Defaults(parse_mode="HTML", disable_notification=True)
-    updater = Updater("BOTTOKEN", defaults=defaults, persistence=pers)
+    updater = Updater("1241790232:AAHiQgHIO6SMwtS7BGLYI3Ae3vHcc4Cdvq8", defaults=defaults, persistence=pers)
     dp = updater.dispatcher
     dp.add_handler(MessageHandler(Filters.update.channel_post & Filters.chat(CHANNEL_ID), new_post))
     dp.add_handler(MessageHandler(Filters.update.edited_channel_post & Filters.chat(CHANNEL_ID), edited_post))
